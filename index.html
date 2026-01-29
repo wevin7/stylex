@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/bootstrap.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .btn-outline-secondary {
+            border: 0;
+            color: rgb(27, 27, 27) !important;
+            background-color: #ffffff;
+
+        }
+
+        .btn-outline-secondary:hover {
+            outline: hidden;
+            border: 0;
+            color: rgb(243, 242, 242) !important;
+            background-color: #615f5f;
+        }
+
+        h1 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: rgb(202, 202, 202) !important;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: url(/images/hero1.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 500px;
+            margin-left: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            font-weight: 800;
+            color: rgb(34, 33, 33);
+        }
+
+        .cards-section {
+            padding: 150px 0;
+        }
+
+        .cards-section .card {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .cards-section .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cards-section .card-header {
+            background: transparent;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 18px;
+        }
+
+        .cards-section .card-footer {
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .card-footer {
+            padding: 15px;
+        }
+
+        .card {
+            background-color: #ffffff;
+        }
+
+        .cards-section .page-link {
+            border: none;
+            color: #111;
+        }
+
+        .cards-section .vp:hover {
+            color: rgb(230, 185, 101);
+        }
+
+        .img-wrapper {
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 103%;
+            object-fit: cover;
+        }
+
+        .nav-link {
+            position: relative;
+            color: #0e0e0e;
+            padding-bottom: 5px;
+        }
+
+        .nav-link:not(.dropdown-toggle)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:not(.dropdown-toggle):hover::after {
+            width: 100%;
+        }
+
+
+
+        @media (max-width: 1000px) {
+            .hero {
+                background-size: 200%;
+                background-position: right bottom;
+                min-height: 85vh;
+            }
+
+            .hero-content h1 {
+                color: white;
+            }
+
+            .hero-content {
+                margin-left: 20px;
+            }
+
+            .btn-outline-dark {
+                border: 1px solid white;
+                color: white;
+            }
+
+            .btn-dark {
+                background-color: white;
+                color: #111;
+                border: 1px solid white;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-bottom: 1px solid rgb(202, 202, 202);
+                padding: 20px;
+            }
+
+            /* btn */
+            .btn-outline-secondary {
+                background-color: rgb(114, 112, 112) !important;
+                color: white !important;
+            }
+
+            .btn-outline-secondary:hover {
+                background-color: white !important;
+                color: rgb(114, 112, 112) !important;
+                outline: 1px solid rgb(114, 112, 112) !important;
+            }
+
+            .nav-link::after {
+                display: none !important;
+            }
+
+            .hero {
+                background-size: 120%;
+                background-position: right bottom;
+                min-height: 80vh;
+            }
+
+            .hero-content h1 {
+                font-size: 55px;
+            }
+
+            .hero-content h1 {
+                color: rgb(0, 0, 0);
+            }
+
+            .btn-outline-dark {
+                border: 1px solid rgb(0, 0, 0);
+                color: rgb(0, 0, 0);
+            }
+
+            .btn-dark {
+                background-color: rgb(0, 0, 0);
+                color: #ffffff;
+                border: 1px solid rgb(0, 0, 0);
+            }
+
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                background-size: 125%;
+                min-height: 60vh;
+            }
+
+            .hero-content {
+                margin-left: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content h1 {
+                color: rgb(0, 0, 0);
+            }
+
+            .btn-outline-dark {
+                border: 1px solid rgb(0, 0, 0);
+                color: rgb(0, 0, 0);
+            }
+
+            .btn-dark {
+                background-color: rgb(0, 0, 0);
+                color: #ffffff;
+                border: 1px solid rgb(0, 0, 0);
+            }
+        }
+
+        @media (max-width: 586px) {
+            .hero {
+                background-size: 240%;
+                min-height: 75vh;
+            }
+
+            .hero-content {
+                margin-left: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content h1 {
+                color: white;
+            }
+
+            .btn-outline-dark {
+                border: 1px solid white;
+                color: white;
+            }
+
+            .btn-dark {
+                background-color: white;
+                color: #111;
+                border: 1px solid white;
+            }
+
+            .cards-section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 344px) {
+            .hero {
+                background-size: 250%;
+                min-height: 60vh;
+            }
+
+            .hero-content {
+                margin-left: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content h1 {
+                color: white;
+            }
+
+            .btn-outline-dark {
+                border: 1px solid white;
+                color: white;
+            }
+
+            .btn-dark {
+                background-color: white;
+                color: #111;
+                border: 1px solid white;
+            }
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background-color: #da910b;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 9999;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-3px);
+            background-color: #583f10;
+        }
+    </style>
+</head>
+
+<button id="backToTop" title="Go to top">↑</button>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm py-3 px-2 bg-dark bg-opacity-10">
+            <a href="#" class="navbar-brand">
+                <img src="/images/Logo2.png" style="height:32px;" alt="">
+            </a>
+            <button type="button" class="navbar-toggler ms-auto border-0" data-bs-toggle="collapse"
+                data-bs-target="#hamb"><span class="navbar-toggler-icon"></span></button>
+            <div class="navbar-collapse collapse justify-content-end" id="hamb">
+                <ul class="navbar-nav gap-4 me-3">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown">Shop</a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a href="#" class="dropdown-item">All Proudcts</a></li>
+                            <li><a href="#" class="dropdown-item">New Arrivals</a></li>
+                            <li><a href="#" class="dropdown-item">Best Sellers</a></li>
+                            <li><a href="#" class="dropdown-item">Sales</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="men.html" class="nav-link">Men</a></li>
+                    <li class="nav-item"><a href="women.html" class="nav-link">Women</a></li>
+                    <li class="nav-item"><a href="kids.html" class="nav-link">Kids</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="sign.html" class="btn btn-outline-secondary">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>
+                    Dress Better<br>
+                    Feel Better.
+                </h1>
+
+                <div class="mt-4 d-flex gap-3 botonat">
+                    <a href="men.html" class="btn btn-dark px-4">Shop Now</a>
+                    <a href="#" class="btn btn-outline-dark px-4">New</a>
+                </div>
+            </div>
+        </section>
+        <section class="cards-section bg-dark bg-opacity-10">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4 text-center">
+                        <div class="card border-0">
+                            <div class="card-header border-0">MEN</div>
+                            <div class="card-body p-0">
+                                <div class="img-wrapper">
+                                    <img src="/images/téléchargement (36).jpeg" class="card-img rounded-0" alt="">
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center vp  border-0">
+                                <i class="bi-eye-fill"></i><a href="men.html" class="page-link">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 text-center">
+                        <div class="card border-0">
+                            <div class="card-header border-0">WOMEN</div>
+                            <div class="card-body p-0">
+                                <div class="img-wrapper">
+                                    <img src="/images/téléchargement (37).jpeg" class="card-img rounded-0" alt="">
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center vp  border-0">
+                                <i class="bi-eye-fill"></i><a href="women.html" class="page-link">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 text-center">
+                        <div class="card border-0">
+                            <div class="card-header border-0">KIDS</div>
+                            <div class="card-body p-0">
+                                <div class="img-wrapper">
+                                    <img src="/images/téléchargement (35).jpeg" class="card-img rounded-0" alt="">
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center vp border-0">
+                                <i class="bi-eye-fill"></i><a href="kids.html" class="page-link">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-center text-white py-4 mt-auto">
+        <p>&copy; 2026 - StyleX</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="https://www.instagram.com/wevin_x?igsh=eWs0OGw1cDdhZXAy" class="page-link" title="@Wevin_x"><span class="bi-facebook"></span></a>
+            <a href="https://www.instagram.com/wevin_x?igsh=eWs0OGw1cDdhZXAy" class="page-link"  title="@Wevin_x"><span class="bi-instagram"></span></a>
+            <a href="https://www.instagram.com/wevin_x?igsh=eWs0OGw1cDdhZXAy" class="page-link"  title="@Wevin_x"><span class="bi-twitter"></span></a>
+        </div>
+    </footer>
+
+</body>
+<script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    });
+
+    btn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+<script>
+document.addEventListener('click', function (event) {
+    const navbar = document.querySelector('.navbar-collapse');
+    const toggler = document.querySelector('.navbar-toggler');
+
+    if (
+        navbar.classList.contains('show') &&
+        !navbar.contains(event.target) &&
+        !toggler.contains(event.target)
+    ) {
+        toggler.click();
+    }
+});
+</script>
+
+
+</html>
